@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p #{responseObject}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Enter the URI</label>
+    <input type="text" class="form-control mt-3 mb-3" id="url-input" aria-describedby="emailHelp" placeholder="">
+  </div>
+  <a class="btn btn-primary mb-2" href="#" id="get-data" role="button">Get Info</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Img</th>
+        <th scope="col">Crypto Name</th>
+        <th scope="col">Article title</th>
+        <th scope="col">Context</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <th scope="row">#{data.img}</th>
+        <td>#{data.crypto}</td>
+        <td>#{data.title}</td>
+        if data.context === 'POSITIVE'
+          <td><button type="button" class="btn btn-success">Success</button></td>
+        else if data.context === 'NEGATIVE'
+          <td><button type="button" class="btn btn-danger">NEGATIVE</button></td>
+        else
+          <td><button type="button" class="btn btn-warning">NEUTRAL</button></td>
+          
+  
+      </tr>
+    </tbody>
+  </table>
